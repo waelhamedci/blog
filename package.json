@@ -1,30 +1,34 @@
 {
-  "name": "portapi",
+  "name": "blog",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "mocha --timeout 9999 --exit"
+    "test": "mocha --timeout 9999 --exit",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/benmerchant/portapi.git"
+    "url": "git+https://github.com/waelhamedci/blog.git"
   },
-  "author": "Ben Merchant <benjaminmerchant@gmail.com>",
+  "author": "Ben Merchant <wael.hamed@travis-ci.org>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/benmerchant/portapi/issues"
+    "url": "https://github.com/waelhamedci/blog/issues"
   },
-  "homepage": "https://github.com/benmerchant/portapi#readme",
+  "homepage": "https://github.com/waelhamedci/blog#readme",
   "dependencies": {
     "chai": "4.1.2",
     "chai-http": "4.0.0",
-    "mocha": "5.1.1",
-    "nodemon": "1.17.3"
+    "mocha": "^10.3.0",
+    "nodemon": "^3.1.0"
   },
   "devDependencies": {
-    "body-parser": "1.18.2",
-    "express": "4.16.3",
-    "mongoose": "5.0.16"
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "mongoose": "^5.13.22"
+  },
+  "directories": {
+    "test": "test"
   }
 }

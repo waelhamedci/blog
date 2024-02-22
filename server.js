@@ -9,19 +9,25 @@ const app = express();
 
 app.use(bodyParser.json());
 
-if(process.env.NODE_ENV === "test") {
+if (process.env.NODE_ENV === "test") {
   app.set('port', config.test_port);
   app.listen(app.get('port'), err => {
-    if(err) console.error(err);
+    if (err) console.error(err);
     console.log(`Server listening on port ${app.get('port')}...`);
-    const db = mongoose.connect(config.test_db);
+    mongoose.connect(config.test_db, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    });
   });
 } else {
   app.set('port', config.port);
   app.listen(app.get('port'), err => {
-    if(err) console.error(err);
+    if (err) console.error(err);
     console.log(`Server listening on port ${app.get('port')}...`);
-    const db = mongoose.connect(config.db);
+    mongoose.connect(config.db, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    });
     mongoose.connection.on('connected', () => {
       console.log(`Mongoose connected to ${config.db}`);
     });
@@ -30,5 +36,5 @@ if(process.env.NODE_ENV === "test") {
 
 router(app);
 
-// needed for testing porpoises only
+// needed for testing purposes only
 module.exports = app;
