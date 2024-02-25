@@ -17,6 +17,8 @@ if (process.env.NODE_ENV === "test") {
     mongoose.connect(config.test_db, {
       useNewUrlParser: true,
       useUnifiedTopology: true
+    }).catch(error => {
+      console.error('MongoDB connection error:', error);
     });
   });
 } else {
@@ -27,6 +29,8 @@ if (process.env.NODE_ENV === "test") {
     mongoose.connect(config.db, {
       useNewUrlParser: true,
       useUnifiedTopology: true
+    }).catch(error => {
+      console.error('MongoDB connection error:', error);
     });
     mongoose.connection.on('connected', () => {
       console.log(`Mongoose connected to ${config.db}`);

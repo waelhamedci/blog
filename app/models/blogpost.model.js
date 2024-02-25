@@ -1,8 +1,9 @@
 // blogpost.model.js
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+
 // BlogPost Schema
-const BlogPostSchema = mongoose.Schema({
+const BlogPostSchema = new Schema({
   url: {
     type: String,
     required: true,
@@ -25,4 +26,9 @@ const BlogPostSchema = mongoose.Schema({
     type: Date
   }
 });
+
+// Create indexes after defining the schema
+// BlogPostSchema.index({ url: 1 }, { unique: true }); // Ensure unique index on 'url'
+
+// Export the model
 module.exports = mongoose.model('BlogPost', BlogPostSchema);
