@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "14"
+  - "14" 
 
 services:
   - mongodb
@@ -10,11 +10,10 @@ cache:
     - node_modules
 
 before_install:
-  - npm install -g npm@latest
+  - npm install -g npm@7.24.0 
 
 install:
   - npm install
 
 script:
   - npm test
-  
