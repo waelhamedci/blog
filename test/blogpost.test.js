@@ -16,7 +16,7 @@ describe('Blog Posts', () => {
     });
   });
   describe('/POST/ - publish a BlogPost', () => {
-    it('it should POST a new BlogPost', done => {
+    it('it should POST a BlogPost', done => {
       const NewBlogPost = {
         // url: 'my-first-blog-post', // you can remove this line
         title: 'My First Blog Post',
