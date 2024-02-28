@@ -19,8 +19,9 @@ install:
 
 script:
   - npm test
-  - openssl aes-256-cbc -K $encrypted_key -iv $encrypted_iv -in hello.txt.enc -out hello.txt -d
-  - cat hello.txt
+  # - openssl aes-256-cbc -K $encrypted_key -iv $encrypted_iv -in hello.txt.enc -out hello.txt -d
+  # - cat hello.txt
+  - node app.js
 
 
 
